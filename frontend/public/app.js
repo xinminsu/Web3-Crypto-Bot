@@ -143,7 +143,7 @@ function copyReferralLink() {
 }
 
 function generateReferralLink(userId) {
-    const baseUrl = "https://t.me/InfinityWeb3CryptoBot/app?startapp=";
+    const baseUrl = "https://t.me/SujiexmBot/app?startapp=";
     return baseUrl + userId;
 }
 
