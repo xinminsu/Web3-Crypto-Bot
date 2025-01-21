@@ -8,7 +8,7 @@ const port = 3000;
 const botToken = '7722454200:AAEXD-eVJj9q_aMMZLYPWu-jg6DrC7RmAlc';
 const bot = new TelegramBot(botToken, { polling: false });
 
-const uri = "mongodb://localhost:27017/";
+const uri = "mongodb://172.30.26.142:27017/";
 const client = new MongoClient(uri);
 
 async function connectToDatabase() {
@@ -218,5 +218,5 @@ app.get('/getReferrals', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at http://121.41.22.164:${port}`);
 });

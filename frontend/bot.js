@@ -4,7 +4,7 @@ const crypto = require('crypto');
 
 const token = '7722454200:AAEXD-eVJj9q_aMMZLYPWu-jg6DrC7RmAlc';
 const bot = new TelegramBot(token, { polling: true });
-const uri = "mongodb://localhost:27017/";
+const uri = "mongodb://172.30.26.142:27017/";
 const client = new MongoClient(uri);
 const webAppBaseUrl = 'https://app.likhon.xyz/';
 
@@ -51,7 +51,7 @@ bot.onText(/\/start/, async (msg) => {
       user = { userId, username, points: 0, completedTasks: [], referredBy: null, referralCode: userId.toString(), lastPointUpdate: new Date(), joinDate: new Date() };
       await userCollection.insertOne(user);
     }
-    const referralLink = `https://t.me/InfinityWeb3CryptoBot?start=${user.referralCode}`;
+    const referralLink = `https://t.me/SujiexmBot?start=${user.referralCode}`;
     const webAppUrl = generateWebAppUrl(msg.from);
     const message = `🚀 Welcome to Infinity Web3 Crypto Bot, ${username}!\n\n📊 Points: ${user.points}\n💰 Earn 100 points per referral!\n✨ Start your crypto journey now!`;
     const keyboard = {
@@ -81,7 +81,7 @@ bot.on('message', async (msg) => {
       const user = await userCollection.findOne({ userId: userId });
 
       if (user) {
-        const referralLink = `https://t.me/InfinityWeb3CryptoBot?start=${user.referralCode}`;
+        const referralLink = `https://t.me/SujiexmBot?start=${user.referralCode}`;
         const message = `Here's your unique referral link:\n\n${referralLink}\n\nShare this link with your friends. When they join using your link, you'll earn 100 points!`;
         await bot.sendMessage(chatId, message);
       } else {
