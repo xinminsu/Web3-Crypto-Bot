@@ -4,7 +4,7 @@ const crypto = require('crypto');
 
 const token = '7722454200:AAEXD-eVJj9q_aMMZLYPWu-jg6DrC7RmAlc';
 const bot = new TelegramBot(token, { polling: true });
-const uri = "mongodb://172.30.26.142:27017/";
+const uri = "mongodb://172.25.8.116:27017/";
 const client = new MongoClient(uri);
 const webAppBaseUrl = 'https://app.likhon.xyz/';
 

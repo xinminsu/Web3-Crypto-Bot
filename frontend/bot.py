@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 # Configuration
 TOKEN = '7722454200:AAEXD-eVJj9q_aMMZLYPWu-jg6DrC7RmAlc'
-MONGO_URI = "mongodb://172.30.26.142:27017/"
+MONGO_URI = "mongodb://172.25.8.116:27017/"
 WEB_APP_BASE_URL = 'https://app.likhon.xyz/'
 POINTS_PER_REFERRAL = 100
 
