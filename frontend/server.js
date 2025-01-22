@@ -17,8 +17,8 @@ const client = new MongoClient(uri);
 
 // serve the API with signed certificate on 443 (SSL/HTTPS) port
 const httpsServer = https.createServer({
-    key: fs.readFileSync('/etc/letsencrypt/live/sujietg.xyz/privkey1.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/sujietg.xyz/fullchain1.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/live/sujietg.xyz/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/sujietg.xyz/fullchain.pem'),
   }, app);
 
 async function connectToDatabase() {
