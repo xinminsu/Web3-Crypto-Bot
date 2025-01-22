@@ -2,6 +2,10 @@ const express = require('express');
 const TelegramBot = require('node-telegram-bot-api');
 const { MongoClient } = require('mongodb');
 
+// import packages
+const https = require('https');
+const fs = require('fs');
+
 const app = express();
 const port = 80;
 
@@ -10,6 +14,12 @@ const bot = new TelegramBot(botToken, { polling: false });
 
 const uri = "mongodb://localhost:27017/";
 const client = new MongoClient(uri);
+
+// serve the API with signed certificate on 443 (SSL/HTTPS) port
+const httpsServer = https.createServer({
+    key: fs.readFileSync('/etc/letsencrypt/live/sujietg.xyz/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/sujietg.xyz/fullchain.pem'),
+  }, app);
 
 async function connectToDatabase() {
     try {
@@ -219,4 +229,8 @@ app.get('/getReferrals', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server running at http://47.239.107.107:${port}`);
+});
+
+httpsServer.listen(443, () => {
+    console.log('HTTPS Server running on port 443');
 });
