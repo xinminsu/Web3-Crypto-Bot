@@ -3,7 +3,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const { MongoClient } = require('mongodb');
 
 const app = express();
-const port = 3000;
+const port = 80;
 
 const botToken = '7722454200:AAEXD-eVJj9q_aMMZLYPWu-jg6DrC7RmAlc';
 const bot = new TelegramBot(botToken, { polling: false });
